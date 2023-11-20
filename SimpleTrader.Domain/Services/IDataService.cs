@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 
 namespace SimpleTrader.Domain.Services
 {
-    public interface IDataServices<T> 
+    public interface IDataService<T> 
     {
         Task<IEnumerable<T>> GetAll();
         Task<T> Get(int id);
         Task<T> Create(T entity);
-        Task<T> Update(T entity);
-        Task<bool> Delete(int id);
-
-        
+        Task<T> Update(int id, T entity);
+        Task<bool> Delete(T entity, int id);
     }
 }
