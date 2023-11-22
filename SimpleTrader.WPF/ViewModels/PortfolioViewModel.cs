@@ -1,6 +1,6 @@
 ﻿namespace SimpleTrader.WPF.ViewModels;
 
-public class PorfolioViewModel : ViewModelBase
+public class PortfolioViewModel : ViewModelBase
 {
     
 }

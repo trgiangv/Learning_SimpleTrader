@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
+using SimpleTrader.Domain.Models;
+using SimpleTrader.FinancialModelingPrepAPI.Services;
+using SimpleTrader.WPF.ViewModels;
 
 namespace SimpleTrader.WPF
 {
@@ -15,7 +12,15 @@ namespace SimpleTrader.WPF
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            new MajorIndexService().GetMajorIndex(MajorIndexType.DowJones).ContinueWith(task =>
+            {
+                if (task.Exception == null)
+                {
+                    MajorIndex majorIndex = task.Result;
+                }
+            });
             Window window = new MainWindow();
+            window.DataContext = new MainViewModel();
             window.Show();
             base.OnStartup(e);
         }

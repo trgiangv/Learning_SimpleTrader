@@ -3,8 +3,14 @@ using SimpleTrader.WPF.ViewModels;
 
 namespace SimpleTrader.WPF.State.Navigators;
 
+public enum ViewType
+{
+    Home,
+    Portfolio
+}
+
 public interface INavigator
 {
-    ViewModelBase CurrentViewModel { get;}
-    ICommand UpdateCurrnetViewModelCommand { get; }
+    ViewModelBase CurrentViewModel { get; set; }
+    ICommand UpdateCurrentViewModelCommand { get;}
 }

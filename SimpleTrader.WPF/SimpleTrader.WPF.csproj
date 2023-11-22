@@ -10,10 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SimpleTrader.Domain\SimpleTrader.Domain.csproj" />
     <ProjectReference Include="..\SimpleTrader.EntityFramework\SimpleTrader.EntityFramework.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\" />
+    <ProjectReference Include="..\SimpleTrader.FinancialModelingPrepAPI\SimpleTrader.FinancialModelingPrepAPI.csproj" />
   </ItemGroup>
 
 </Project>
